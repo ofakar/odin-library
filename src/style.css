@@ -97,6 +97,11 @@ label {
   gap: 15px;
 }
 
+.checkbox-container,
+.switch {
+  user-select: none;
+}
+
 input[type="submit"] {
   flex: 1;
 }
