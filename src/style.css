@@ -1,3 +1,5 @@
+@import url("./switch.css");
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -5,7 +7,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #223;
 }
 
 * {
@@ -15,15 +17,17 @@
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 98vw;
-  max-width: 960px;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 1rem;
+  width: 100vw;
   min-height: 100vh;
   margin-inline: auto;
 }
 
+h1 {
+  text-align: center;
+}
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -34,13 +38,72 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  outline: none;
 }
-button:hover {
-  border-color: #646cff;
+
+input {
+  font-size: inherit;
+  border-radius: 0.4rem;
+  padding: 0.3rem;
+}
+
+button:hover,
+input:hover {
+  border-color: #eee9;
 }
 button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+button:focus-visible,
+input:focus,
+input:focus-visible {
+  border: 1px solid #eeec;
+}
+
+.book-form {
+  display: grid;
+  justify-content: center;
+  gap: 15px;
+}
+
+.input-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  gap: 15px;
+}
+
+label {
+  justify-self: end;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.checkbox-container > input[type="submit"] {
+  flex: 1;
+}
+
+.books {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 16rem);
+  grid-auto-rows: 16rem;
+  gap: 15px;
+  box-shadow: 0 0 5px #cce5;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 15px;
+}
+
+.book {
+  background-color: #334;
+  border-radius: 10px;
+  padding: 1rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 50px;
 }
 
 @media (prefers-color-scheme: light) {
